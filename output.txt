@@ -1,1 +1,5 @@
-Enter a number: Enter another number: The sum of the two numbers is:  theraisdivn
+YES
+NO
+YES
+NO
+YES

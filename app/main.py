@@ -30,11 +30,6 @@ def upload_files():
     
     code_file_path = os.path.join(UPLOAD_FOLDER, code_file.filename)
     input_file_path = os.path.join(UPLOAD_FOLDER, 'input.txt')
-
-    files = os.listdir(UPLOAD_FOLDER)
-    for f in files:
-        delPath = os.path.join(UPLOAD_FOLDER, f)
-        os.remove(delPath)
     
     code_file.save(code_file_path)
     input_file.save(input_file_path)

@@ -4,9 +4,8 @@ from flask import Flask, request, send_file, jsonify, render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
 CORS(app)  # Enable CORS for all routes
-CORS(app, resources={r"/upload": {"origins": "https://coderunnerbackend-oyxl.onrender.com"}})
+
 UPLOAD_FOLDER = 'uploads'
 OUTPUT_FILE = 'output.txt'
 
@@ -74,9 +73,8 @@ def upload_files():
 def get_output():
     if not os.path.exists(OUTPUT_FILE):
         return 'Output file not found', 404
-    
-    with open(OUTPUT_FILE, 'r') as f:
-        return f.read()
+
+    return send_file(OUTPUT_FILE, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

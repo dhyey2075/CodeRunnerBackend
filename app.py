@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 CORS(app)  # Enable CORS for all routes
-CORS(app, resources={r"/upload": {"origins": "https://d5ttvtw2-5173.inc1.devtunnels.ms"}})
+CORS(app, resources={r"/upload": {"origins": "https://coderunnerbackend-oyxl.onrender.com"}})
 UPLOAD_FOLDER = 'uploads'
 OUTPUT_FILE = 'output.txt'
 
